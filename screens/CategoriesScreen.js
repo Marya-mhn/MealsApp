@@ -4,7 +4,7 @@ import { CATEGORIES } from "../data/DummyData";
 
 function renderCategoryItem(itemData) {
   return (
-    <CategoryGridTile title={itemData.item.title} color={itemData.color} />
+    <CategoryGridTile title={itemData.item.title} color={itemData.item.color} />
   );
 }
 
@@ -14,6 +14,7 @@ function CategoriesScreen() {
       data={CATEGORIES}
       keyExtractor={(item) => item.id}
       renderItem={renderCategoryItem}
+      numColumns={2}
     />
   );
 }
