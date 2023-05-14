@@ -2,7 +2,7 @@ import { Text, Image, View } from "react-native";
 
 import { MEALS } from "../data/DummyData";
 
-import MealDetails from "./MealDetails";
+import MealDetails from "../Components/MealDetails";
 
 function MealDetailScreen({ route }) {
   const mealId = route.params.mealId;
@@ -19,8 +19,14 @@ function MealDetailScreen({ route }) {
       />
       <View></View>
       <Text>Ingredients</Text>
+      {selectedMeal.ingredients.map((ingredient) => (
+        <Text key={ingredient}>{ingredient}</Text>
+      ))}
 
       <Text>Seps</Text>
+      {selectedMeal.steps.map((step) => (
+        <Text key={step}>{step}</Text>
+      ))}
     </View>
   );
 }
