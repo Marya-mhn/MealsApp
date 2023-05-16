@@ -22,13 +22,11 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name="Drawer"
-            component={DrawerNavigator}
-            options={
-              {
-                // title: "All Categories",
-              }
-            }
+            name="AllCategoriesScreen"
+            component={CategoriesScreen}
+            options={{
+              title: "All Categories",
+            }}
           />
           <Stack.Screen
             name="MealsOverView"
