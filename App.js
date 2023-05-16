@@ -9,10 +9,15 @@ import MealsOverviewScreen from "./screens/MealsOverviewScreen";
 import MealDetailScreen from "./screens/MealDetailScreen";
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
-// function DrawerNAvigator() {
-//   return;
-// }
+function DrawerNavigator() {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Categories" component={CategoriesScreen} />
+    </Drawer.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -27,11 +32,13 @@ export default function App() {
           }}
         >
           <Stack.Screen
-            name="MealsCategories"
-            component={CategoriesScreen}
-            options={{
-              title: "All Categories",
-            }}
+            name="Drawer"
+            component={DrawerNavigator}
+            options={
+              {
+                // title: "All Categories",
+              }
+            }
           />
           <Stack.Screen
             name="MealsOverView"
